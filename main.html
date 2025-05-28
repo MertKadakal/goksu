@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Beni affet</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    #evetBtn {
+      background-color: green;
+    }
+
+    #hayirBtn {
+      background-color: red;
+    }
+
+    #tesekkur {
+      display: none;
+      font-size: 28px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="icerik">
+    <img src="image.jpg" alt="Görsel">
+    <p>Çok lezziz duruyordun dayanamadım biraz yedim seni, beni affeder misin bebeğim??</p>
+    <div class="buttons">
+      <button id="evetBtn">Evet</button>
+      <button id="hayirBtn">Hayır</button>
+    </div>
+  </div>
+
+  <div id="tesekkur">Bana kıyamayacağını biliyordum aşkım teşekkür ederim 💖</div>
+
+  <script>
+    const evetBtn = document.getElementById("evetBtn");
+    const hayirBtn = document.getElementById("hayirBtn");
+    const icerik = document.getElementById("icerik");
+    const tesekkur = document.getElementById("tesekkur");
+
+    hayirBtn.addEventListener("mouseenter", () => {
+      evetBtn.textContent = "Hayır";
+      hayirBtn.textContent = "Evet";
+      evetBtn.style.backgroundColor = "red";
+      hayirBtn.style.backgroundColor = "green";
+    });
+
+    hayirBtn.addEventListener("mouseleave", () => {
+      evetBtn.textContent = "Evet";
+      hayirBtn.textContent = "Hayır";
+      evetBtn.style.backgroundColor = "green";
+      hayirBtn.style.backgroundColor = "red";
+    });
+
+    function butonaBasildi() {
+      icerik.style.display = "none";
+      tesekkur.style.display = "block";
+    }
+
+    evetBtn.addEventListener("click", butonaBasildi);
+    hayirBtn.addEventListener("click", butonaBasildi);
+  </script>
+
+</body>
+</html>
